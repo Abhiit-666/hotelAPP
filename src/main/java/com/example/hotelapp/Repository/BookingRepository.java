@@ -25,6 +25,9 @@ public class BookingRepository {
     // check for empty rooms
     public String available(LocalDate checkinDate, LocalDate checkoutDate) {
 
+        //I should be checking the checkinDate and checkout date in the booking table. Instead of just isOccupied=false.
+        //As the idea here is to have the room be associated with multiple bookings where isOccupied can vary based on the check IN/OUT dates.
+        //Need to explore this a little
         String sql = "Select count(*) from Room where isOccupied='false'";
         int count = jdbcTemplate.queryForObject(sql, Integer.class);
         if (count > 0) {
@@ -42,4 +45,12 @@ public class BookingRepository {
 
     }
 
+    //Book empty room
+    public String booking(LocalDate checkInDate, LocalDate checkOutDate, String roomNum)
+    {
+        String sql="Select id from room where room_number=?";
+        String sql=
+
+    } 
+    return null;
 }

@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.hotelapp.DTO.Availability;
+import com.example.hotelapp.Entity.Booking;
 import com.example.hotelapp.Service.HotelServiceImplementation;
 
 @RestController("/Booking")
 public class BookingController {
 
-    @Autowired
+/*     @Autowired
     HotelServiceImplementation hotelServiceImplementation;
 
     BookingController(HotelServiceImplementation hotelServiceImplementation) {
@@ -28,4 +29,11 @@ public class BookingController {
         return availability;
     }
 
+    @PostMapping("/BookTheRoom")
+    public Booking booktheroom(@RequestBody Date checkInDate, @RequestBody Date checkOutDate, @RequestBody String roomNum)
+    {
+        hotelServiceImplementation.book(checkInDate,checkOutDate,roomNum);
+        return null;
+    }
+ */
 }
