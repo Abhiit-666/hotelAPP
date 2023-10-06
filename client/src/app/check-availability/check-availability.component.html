@@ -1,0 +1,17 @@
+<form (ngSubmit)="checkAvailibility()">
+    <label for="checkInDate">Check-In-Date:</label>
+    <input id="checkInDate" [(ngModel)]="checkInDate" name="checkInDate">  
+    
+    <label for="checkOutDate">Check-out-Date:</label>
+    <input id="checkOutDate" [(ngModel)]="checkOutDate" name="checkOutDate">
+
+    <button type="submit">Check Availibility</button>   
+</form>
+
+<div *ngIf="availableRoom">
+    <p>Available Room: {{availableRoom.room_number}}</p>
+    <button (click)="bookRoom()">Book Now</button>
+</div>
+
+
+<p *ngIf="noRoomAvailable">Sorry no room available</p>
