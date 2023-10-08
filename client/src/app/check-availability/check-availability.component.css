@@ -1,0 +1,33 @@
+/* Choose a pre-built theme */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+:host{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height: 100vh;
+    margin:0;
+
+}
+
+h1{
+    font-size :32px;
+    padding: 20px;
+    color: blue;
+}
+
+.my-card{
+    background-color:yellowgreen ;
+    padding: 50px;
+    text-align: center;
+    border-style: inset;
+    border-color: black;
+    border: 100px;
+}
+
+/* body {
+    background-color: #e0f7fa; 
+    color: #1a237e; 
+} */

@@ -1,4 +1,4 @@
-<form (ngSubmit)="checkAvailibility()">
+<!-- <form (ngSubmit)="checkAvailibility()">
     <label for="checkInDate">Check-In-Date:</label>
     <input id="checkInDate" [(ngModel)]="checkInDate" name="checkInDate">  
     
@@ -14,4 +14,56 @@
 </div>
 
 
-<p *ngIf="noRoomAvailable">Sorry no room available</p>
+<p *ngIf="noRoomAvailable">Sorry no room available</p> -->
+<mat-card class="my-card">
+    <h1 mat-headline>Booking</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Check-in Date</mat-label>
+        <input matInput [matDatepicker]="checkInPicker" [(ngModel)]="checkInDate">
+        <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+        <mat-datepicker #checkInPicker></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Check-out Date</mat-label>
+        <input matInput [matDatepicker]="checkOutPicker" [(ngModel)]="checkOutDate">
+        <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+        <mat-datepicker #checkOutPicker></mat-datepicker>
+    </mat-form-field>
+    
+    <button mat-raised-button (click)="checkAvailibility()">Check Availability</button>
+</mat-card>
+
+
+
+
+
+
+<!-- <mat-form-fied appearence="fill">
+    <mat-label>Check-In-Date</mat-label>
+    <input matInput [matDatepicker]="checkInPicker" [(ngModel)]="checkInDate">
+    <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+    <mat-datepicker #checkInPicker></mat-datepucker>
+</mat-form-fied>
+
+<mat-form-field appearence="fill">
+    <mat-label>Check-out Date</mat-label>
+    <input matInput [matDatepicker]="checkOutPicker" [(ngModel)="checkOutDate">
+    <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+    <mat-datepicker #checkOutPicker></mat-datepicker>
+</mat-form-field>
+
+<button mat-raised-button (click)="checkAvailibility()">Check Availability</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
