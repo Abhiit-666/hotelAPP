@@ -13,6 +13,8 @@ public class FoodOrder {
     private Long id;
     private String itemName;
     private double price;
+    private Boolean veg;
+
 
     /**
      * @return Long return the id
@@ -55,14 +57,30 @@ public class FoodOrder {
     public void setPrice(double price) {
         this.price = price;
     }
+    
+    
+    /**
+     * @return Boolean return the veg
+     */
+    public Boolean isVeg() {
+        return veg;
+    }
+
+    /**
+     * @param veg the veg to set
+     */
+    public void setVeg(Boolean veg) {
+        this.veg = veg;
+    }
 
     @Override
     public String toString() {
-        return "{" +
-                " id='" + getId() + "'" +
-                ", itemName='" + getItemName() + "'" +
-                ", price='" + getPrice() + "'" +
-                "}";
+        return "FoodOrder [id=" + id + ", itemName=" + itemName + ", price=" + price + ", veg=" + veg + "]";
     }
+
+    
+   
+
+
 
 }
