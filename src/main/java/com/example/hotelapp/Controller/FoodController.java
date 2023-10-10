@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.hotelapp.DTO.Foodinfo;
+import com.example.hotelapp.DTO.OrderedItems;
 import com.example.hotelapp.Service.Food.FoodServiceImplementation;
 
 @RestController("/Menu")
@@ -21,10 +23,15 @@ public class FoodController {
     }
 
     @PostMapping("/getMenu")
-    public List<String> getMenu(@RequestBody String type){
-        List<String> FoodList=foodServiceImplementation.getList(type);
+    public List<Foodinfo> getMenu(@RequestBody String type){
+        List<Foodinfo> FoodList=foodServiceImplementation.getList(type);
         return FoodList;
 
+    }
+
+    @PostMapping("/setOrder")
+    public String OrderFood(@RequestBody List<OrderedItems> items){
+        return "Order successful";
     }
     
 }

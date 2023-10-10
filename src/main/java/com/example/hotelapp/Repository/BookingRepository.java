@@ -6,21 +6,22 @@ import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import com.example.hotelapp.Entity.Room;
 
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.EntityManager;
 
+@Repository
 public class BookingRepository {
 
     @Autowired
     private final JdbcTemplate jdbcTemplate;
 
-    private final EntityManager entityManager;
+    
 
-    BookingRepository(JdbcTemplate jdbcTemplate, EntityManager entityManager) {
-        this.entityManager = entityManager;
+    BookingRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

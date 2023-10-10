@@ -1,30 +1,25 @@
-package com.example.hotelapp.Service;
+package com.example.hotelapp.Service.Booking;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
+
 import org.springframework.stereotype.Service;
 
 import com.example.hotelapp.DTO.Availability;
 import com.example.hotelapp.Repository.BookingRepository;
-import com.example.hotelapp.Repository.FoodOrderRepository;
-import com.example.hotelapp.Repository.RoomRepository;
 
 @Service
 public class HotelServiceImplementation implements HotelService{
 
-    private final RoomRepository roomRepository;
+    
     private final BookingRepository bookingrepository;
-    private final FoodOrderRepository foodOrderRepository;
+    
 
     
-    HotelServiceImplementation(RoomRepository roomRepository, BookingRepository bookingrepository,
-            FoodOrderRepository foodOrderRepository) {
-        this.roomRepository = roomRepository;
+    HotelServiceImplementation(BookingRepository bookingrepository) {
+        
         this.bookingrepository = bookingrepository;
-        this.foodOrderRepository = foodOrderRepository;
+        
     }
 
     //Checking for the availability of rooms
