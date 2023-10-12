@@ -31,6 +31,7 @@ public class FoodController {
 
     @PostMapping("/setOrder")
     public String OrderFood(@RequestBody List<OrderedItems> items){
+        foodServiceImplementation.orderFood(items);
         return "Order successful";
     }
     

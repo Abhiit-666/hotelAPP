@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.example.hotelapp.DTO.Foodinfo;
+import com.example.hotelapp.DTO.OrderedItems;
 
 @Repository
 public class FoodOrderRepository {
@@ -40,9 +41,15 @@ public class FoodOrderRepository {
             foodList.add(new Foodinfo(itemName,price));
         }
         return foodList;
-    }catch(Exception e){
+        }catch(Exception e){
         return foodList;
+        }
     }
-        
+
+    public String orderFoodrepo(List<OrderedItems> items){
+        return "";
     }
+
+
+
 }

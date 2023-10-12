@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.hotelapp.DTO.Foodinfo;
+import com.example.hotelapp.DTO.OrderedItems;
 import com.example.hotelapp.Repository.FoodOrderRepository;
 
 @Service
@@ -22,5 +23,11 @@ public class FoodServiceImplementation implements FoodService{
         List<Foodinfo> foodList=new ArrayList<>();
         foodList=foodOrderRepository.foodSearch(type);
         return foodList;
+    }
+
+    public String orderFood(List<OrderedItems> items){
+       String status=foodOrderRepository.orderFoodrepo(items);
+
+        return status;
     }
 }
